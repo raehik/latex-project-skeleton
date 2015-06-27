@@ -1,4 +1,27 @@
-\documentclass{article}
+%% Preamble {{{
+\input{lib/generic-macros}
+\inputlib{generic-preamble}
+%% }}}
+
 \begin{document}
-Hello world!
+
+%% Title page {{{
+\title{Example \LaTeX\ project}
+\author{raehik}
+
+% \today's format follows: '{month} {day}, {year}'
+\date{\today}
+
+\maketitle
+%% }}}
+
+%% Table of contents {{{
+\clearpage
+\tableofcontents
+\clearpage
+%% }}}
+
+\inputsrc{introduction}
+\inputsrc{package-examples}
+
 \end{document}

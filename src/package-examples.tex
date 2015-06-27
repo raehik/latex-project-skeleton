@@ -1,0 +1,16 @@
+\section{Package examples}
+\subsection{\texttt{minted}}
+
+\texttt{minted} is a \LaTeX\ package which provides syntax highlighting
+using the Pygments library. It comes with \TeX\ Live.
+
+\begin{minted}[breaklines]{python}
+def example_python():
+    if 1 < 2:
+        print("The minted package does syntax highlighting!")
+        print("The [breaklines] option makes sure that lines don't go past the right margin.")
+    return 0
+
+if __name__ == "__main__":
+    example_python()
+\end{minted}

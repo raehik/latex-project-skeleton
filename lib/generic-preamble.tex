@@ -1,0 +1,34 @@
+%% Document class {{{
+
+% most generic document class: useful for anything from a journal
+% article to a report
+\documentclass[a4paper]{article}
+
+%% }}}
+
+%% Packages {{{
+
+% better kerning etc. for accented characters and so on
+% see here: http://tex.stackexchange.com/questions/664
+\usepackage[T1]{fontenc}
+
+% allow more than just ASCII input in files (e.g. ä rather than \"a)
+\usepackage[utf8]{inputenc}
+
+% use Latin Modern fonts -- may be typeset with higher quality or sth.
+% see here: http://tex.stackexchange.com/questions/1390
+% (there is a chance that my TeX distribution uses Latin Modern by
+% default, but it's still a safe bet to specify it)
+\usepackage{lmodern}
+
+% clickable TOC
+\usepackage[hidelinks]{hyperref}
+
+% allow using CJK characters with \begin{CJK}{UTF8}{font}
+% (suggest you leave it commented out unless required)
+%\usepackage{CJKutf8}
+
+% syntax highlighting used Pygments
+\usepackage[outputdir=build]{minted}
+
+%% }}}
