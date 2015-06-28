@@ -15,18 +15,39 @@
 % allow more than just ASCII input in files (e.g. ä rather than \"a)
 \usepackage[utf8]{inputenc}
 
+% allow using CJK characters with \begin{CJK}{UTF8}{font}
+% (suggest you leave it commented out unless required)
+%\usepackage{CJKutf8}
+
 % use Latin Modern fonts -- may be typeset with higher quality or sth.
 % see here: http://tex.stackexchange.com/questions/1390
 % (there is a chance that my TeX distribution uses Latin Modern by
 % default, but it's still a safe bet to specify it)
 \usepackage{lmodern}
 
+% Specify font style.
+% Options:
+%   \rmdefault : Serif (Roman)
+%   \sfdefault : Sans-serif
+%   \ttdefault : Monospace (typewriter)
+%
+% Default is serif.
+%\renewcommand*{\familydefault}{\rmdefault}
+
+% use only 1 space at end of sentence, instead of default 2
+% I keep it off, but useful to know command.
+%\frenchspacing
+
+% vertical spacing between paragraphs, but keep the default 15pt indent
+% Again, sticking with the default no vertical spacing for now.
+%\usepackage{parskip}
+%\setlength{\parindent}{15pt}
+
+% lorem ipsum for placeholders & formatting testing
+\usepackage{lipsum}
+
 % clickable TOC
 \usepackage[hidelinks]{hyperref}
-
-% allow using CJK characters with \begin{CJK}{UTF8}{font}
-% (suggest you leave it commented out unless required)
-%\usepackage{CJKutf8}
 
 % syntax highlighting used Pygments
 \usepackage[outputdir=build]{minted}
