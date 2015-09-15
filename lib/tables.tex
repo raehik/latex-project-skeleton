@@ -1,0 +1,17 @@
+% \R = \hline
+\newcommand{\R}{\hline}
+
+% \thead{Table header} = \textbf{Table header}
+\newcommand{\thead}[1]{\textbf{#1}}
+
+% sets up a common table environment
+\newcommand{\starttable}[1]{%
+    \begin{tabular}{#1}
+}
+
+% ends a (pretty much any) table environment
+\newcommand{\stoptable}{%
+    \\
+    \hline
+    \end{tabular}
+}
