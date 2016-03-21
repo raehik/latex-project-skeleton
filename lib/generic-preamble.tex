@@ -8,40 +8,52 @@
 
 %% Packages {{{
 
-% decrease margins a bit (so more page space used)
-%\usepackage[margin=1.25in]{geometry}
+%%% Encoding (highly suggested) {{{
+% Note: As of 2016-03-21 there is pretty much no situation in which you *don't*
+%       want these. T1 is better than OT1 and allowing UTF-8 characters means
+%       you won't get any funny stuff occurring.
 
-% better kerning etc. for accented characters and so on
+% Better kerning etc. for accented characters and so on.
+% Use T1 8-bit encoding, e.g. actual 'ä' character rather than placing
+% diacritic mark '¨' on top of 'a'. Fixes copying and pasting such characters!
 % see here: http://tex.stackexchange.com/questions/664
 \usepackage[T1]{fontenc}
 
 % allow more than just ASCII input in files (e.g. ä rather than \"a)
+% note that this is seperate from fontenc (it's about inputting characters)
 \usepackage[utf8]{inputenc}
+%%% }}}
 
-% allow using CJK characters with \begin{CJK}{UTF8}{font}
-% (suggest you leave it commented out unless required)
-%\usepackage{CJKutf8}
-
-% use Latin Modern fonts -- may be typeset with higher quality or sth.
+%%% Fonts, CJK etc. {{{
+% use Latin Modern font, supports T1 & intended as a successor to Computer
+% Modern, the default font (which only supports OT1)
 % see here: http://tex.stackexchange.com/questions/1390
-% (there is a chance that my TeX distribution uses Latin Modern by
-% default, but it's still a safe bet to specify it)
 \usepackage{lmodern}
 
-% Specify font style.
-% Options:
+% Specify document font style.
 %   \rmdefault : Serif (Roman)
 %   \sfdefault : Sans-serif
 %   \ttdefault : Monospace (typewriter)
-%
-% Default is serif.
+% Default is serif. Little reason to change unless you want to look like a Word
+% document.
 %\renewcommand{\familydefault}{\rmdefault}
 
+% allow using CJK characters with \begin{CJK}{UTF8}{font}
+% (note: best to leave it commented out unless required)
+%\usepackage{CJKutf8}
+%%% }}}
+
+%%% Spacing {{{
+% decrease margins a bit (so more page space used)
+%\usepackage[margin=1.25in]{geometry}
+
 % use only 1 space at end of sentence, instead of default 2
-% I keep it off, but useful to know command.
+% (there are still big debates about this, make your own decision: I don't
+% bother changing it from default)
 %\frenchspacing
 
 % add vertical spacing between paragraphs & remove indent
+% (another make-it-Word command)
 %\usepackage{parskip}
 
 % ...or keep the default 15pt indent (if you use parskip)
@@ -49,8 +61,10 @@
 
 % remove all chapter/section/etc. numbering
 %\setcounter{secnumdepth}{0}
+%%% }}}
 
-% listings package
+%%% Code listings & highlighting {{{
+% listings package & set a good default for code
 \usepackage{listings}
 \lstset{
     basicstyle=\ttfamily,
@@ -58,18 +72,23 @@
     breaklines=true
 }
 
-% lorem ipsum for placeholders & formatting testing
-\usepackage{lipsum}
-
-% clickable TOC
-\usepackage[hidelinks]{hyperref}
-
 % syntax highlighting used Pygments
+% TODO: look into listings, whether it's potentially good enough to use instead)
 \usepackage[outputdir=build]{minted}
+%%% }}}
 
 % images
 \usepackage{graphicx}
 \graphicspath{ {img/} }
 \usepackage{float}
+
+% clickable TOC(s), other things
+% NOTE: hyperref must be loaded AFTER most other packages!
+\usepackage[hidelinks]{hyperref}
+
+%%% Extra {{{
+% lorem ipsum for placeholders & formatting testing
+%\usepackage{lipsum}
+%%% }}}
 
 %% }}}
