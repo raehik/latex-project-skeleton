@@ -1,0 +1,27 @@
+%
+% Extra XeLaTeX-specific preamble commands.
+%
+
+%% Fonts & encoding {{{
+% Allow using system fonts as well as LaTeX ones.
+\usepackage{fontspec}
+
+% Set main document font.
+% In XeLaTeX, you can use any system font rather than just LaTeX fonts &
+% packages. Use `fc-list` and go nuts!
+%\setmainfont{DejaVu Sans}
+
+% Make sure TeX ligatures (-- -> long dash, ` -> left quote, etc.).
+% Note: In my experiments, this doesn't change anything. Can't tell if it's
+%       default or not.
+%\defaultfontfeatures{Ligatures=TeX}
+%% }}}
+
+%% CJK {{{
+% Allows mixing CJK characters with other characters in a document.
+% Note: this loads the fontspec package
+%\usepackage{xeCJK}
+
+% CJK font
+%\setCJKmainfont{Source Han Sans JP}
+%% }}}
