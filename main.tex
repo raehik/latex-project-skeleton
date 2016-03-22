@@ -1,6 +1,9 @@
-%% Preamble {{{
-\input{lib/generic-macros}
-\inputlib{generic-preamble}
+%% Preamble setup {{{
+% setup macros for \input -ing libs & source files
+\newcommand{\addmylib}[1]{\input{lib/#1}}
+\newcommand{\addsrc}[1]{\input{src/#1}}
+
+\addmylib{preamble}
 %% }}}
 
 \begin{document}
@@ -23,7 +26,7 @@
 \clearpage
 %% }}}
 
-\inputsrc{introduction}
-\inputsrc{package-examples}
+\addsrc{introduction}
+\addsrc{package-examples}
 
 \end{document}
