@@ -1,5 +1,5 @@
 %% Preamble setup {{{
-% setup macros for \input -ing libs & source files
+% setup macros for \input-ing libs & source files
 \newcommand{\addmylib}[1]{\input{lib/#1}}
 \newcommand{\addsrc}[1]{\input{src/#1}}
 
@@ -28,5 +28,8 @@
 
 \addsrc{introduction}
 \addsrc{package-examples}
+\ifxetex
+\addsrc{xelatex-example}
+\fi
 
 \end{document}
