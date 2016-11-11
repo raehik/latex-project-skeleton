@@ -1,0 +1,17 @@
+%
+% Code listings, syntax highlighting -- anything to do with code in LaTeX.
+%
+
+% use listings package & set a good default for code
+\usepackage{listings}
+\lstset{
+    basicstyle=\ttfamily,
+    columns=flexible,
+    breaklines=true
+}
+
+% syntax highlighting used Pygments
+% TODO: make 'build' a variable instead
+% TODO: look into listings, whether it's potentially good enough to use instead
+\usepackage[outputdir=build]{minted}
+%%% }}}

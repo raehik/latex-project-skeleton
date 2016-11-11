@@ -5,88 +5,34 @@
 % (e.g. preamble-xelatex for xelatex) with the ifxetex package.
 %
 
-%% Document class {{{
-
-% Most generic document class: useful for anything from a journal
-% article to a report.
-% Use a4paper because I'm not American.
+% article is very generic, good starting point
+% TODO check out report!
+% also use A4 because I'm not American
 \documentclass[a4paper]{article}
 
-%% }}}
+\addmylib{fonts}   % fonts
+\addmylib{spacing} % margins, parskip
+\addmylib{code}    % listings, syntax highlighting
+\addmylib{images}  % images
 
-%% Packages {{{
-
-%%% Font {{{
-% Use Latin Modern font, supports T1 & intended as a successor to Computer
-% Modern, the default font (which only supports OT1).
-% See: http://tex.stackexchange.com/questions/1390
-% Note: if you're using your own font in XeLaTeX, you might want to remove this
-%       line. Might save some space. But it's otherwise a very good base, so I
-%       keep it in the general preamble.
-\usepackage{lmodern}
-%%% }}}
-
-%%% Spacing {{{
-% Decrease margins a bit (so more page space used).
-% Note: I suggest keeping the default unless you have specific margin reqs. for
-% your work or you need to save paper, since they were chosen for typography purposes by people who know a
-% lot about that stuff.
-%\usepackage[margin=1.25in]{geometry}
-
-% Use only 1 space at end of sentence, instead of default 2
-% Note: there are *still* debates about this. Make your own decision: I don't
-% bother changing it from default.
-%\frenchspacing
-
-% Add vertical spacing between paragraphs & remove indent.
-% Note: basically a "make it Word" package.
-%\usepackage{parskip}
-% For parskip: keep the default 15pt indent (so just add vertical spacing)
-%\setlength{\parindent}{15pt}
-%%% }}}
-
-%%% Document style {{{
-% Remove all chapter/section/etc. numbering.
-%\setcounter{secnumdepth}{0}
-%%% }}}
-
-%%% Code listings & highlighting {{{
-% listings package & set a good default for code
-\usepackage{listings}
-\lstset{
-    basicstyle=\ttfamily,
-    columns=flexible,
-    breaklines=true
-}
-
-% syntax highlighting used Pygments
-% TODO: look into listings, whether it's potentially good enough to use instead)
-\usepackage[outputdir=build]{minted}
-%%% }}}
-
-%%% Images {{{
-\usepackage{graphicx}
-\graphicspath{ {img/} }
-\usepackage{float}
-%%% }}}
-
-%%% (Extra) {{{
+%% Optional {{{
 % lorem ipsum for placeholders & formatting testing
 %\usepackage{lipsum}
-%%% }}}
+
+% remove all chapter/section/etc. numbering
+% TODO: does this need a separate file?
+%\setcounter{secnumdepth}{0}
+%% }}}
 
 % Clickable TOC(s) in PDFs, hyperlinks, more.
 % Note: hyperref must be loaded AFTER most other packages! This especially goes
 %       for float -- see my wiki entry on LaTeX for details
 \usepackage[hidelinks]{hyperref}
 
-%% }}}
-
-%% Add specific preamble depending on TeX compiler {{{
+% specific preamble depending on TeX compiler
 \usepackage{ifxetex}
 \ifxetex
     \addmylib{preamble-xelatex}
 \else
     \addmylib{preamble-latex}
 \fi
-%% }}}
