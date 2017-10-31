@@ -1,0 +1,25 @@
+%% Preamble setup {{{
+% setup macros for \input-ing libs & source files
+\newcommand{\addmylib}[1]{\input{lib/#1}}
+\newcommand{\addsrc}[1]{\input{src/#1}}
+
+\addmylib{preamble-beamer}
+%% }}}
+
+\begin{document}
+
+%% Document & author info {{{
+\title{Example \LaTeX\ beamer project}
+\author{raehik}
+
+% \today's format follows: '{month} {day}, {year}'
+\date{\today}
+%% }}}
+
+\addsrc{title}
+\addsrc{part-intro}
+\ifxetex
+    \addsrc{part-jp}
+\fi
+
+\end{document}
