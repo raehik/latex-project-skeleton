@@ -1,13 +1,20 @@
-\begin{frame}
-\frametitle{\LaTeX\ Beamer}
+\newcommand{\cmdverb}[1]{\texttt{\textbackslash #1}}
+
+\begin{frame}\frametitle{\LaTeX\ Beamer}
 \begin{itemize}
-\item flexible presentation creation tool
-\item outputs to PDF
-\item it's freakin' \LaTeX\ dude
+    \item flexible presentation creation tool
+    \item outputs to PDF
+    \item it's freakin' \LaTeX\ dude
 \end{itemize}
 \end{frame}
 
-\begin{frame}
-\frametitle{Another slide}
-OK!
+\begin{frame}\frametitle{Features: \cmdverb{pause}}
+\begin{itemize}
+    \item essentially a solution for incremental slide uncovering
+    \item usage: write something...
+    \item ...then put \cmdverb{pause}: the slide ends...
+    \pause
+    \item ...and the next slide will continue with everything before \& after
+        the \cmdverb{pause}!
+\end{itemize}
 \end{frame}
