@@ -1,9 +1,15 @@
 %% Preamble setup {{{
 % setup macros for \input-ing libs & source files
-\newcommand{\addmylib}[1]{\input{lib/#1}}
-\newcommand{\addsrc}[1]{\input{src/#1}}
+\newcommand{\addcfg}[1]{\input{cfg/#1}}
+\newcommand{\addsrc}[1]{\input{src-beamer/#1}}
 
-\addmylib{preamble-beamer}
+\documentclass{beamer}
+\addcfg{type}
+\addcfg{code}
+\addcfg{images}
+\addcfg{drafts}
+\addcfg{engine-auto}
+\addcfg{beamer}
 %% }}}
 
 \begin{document}
@@ -11,15 +17,12 @@
 %% Document & author info {{{
 \title{Example \LaTeX\ beamer project}
 \author{raehik}
-
-% \today's format follows: '{month} {day}, {year}'
 \date{\today}
 %% }}}
 
-\addsrc{title}
-\addsrc{part-intro}
-\ifxetex
-    \addsrc{part-jp}
+\addsrc{intro}
+\ifXeTeX
+    \addsrc{jp}
 \fi
 
 \end{document}

@@ -1,0 +1,28 @@
+%
+% Top-level LaTeX config.
+%
+% Supports pdfTeX, XeTeX and LuaTeX engines.
+%
+% Intended to be used by projects to enable specific configs, while keeping the
+% main file clear of preamble.
+%
+
+% TODO check out report, memoir
+% article is a common base for any document type
+% use A4 (I'm European)
+\documentclass[a4paper]{article}
+
+\addcfg{type}    % typography: fonts, spacing etc.
+\addcfg{code}    % listings, syntax highlighting
+\addcfg{images}  % images
+\addcfg{drafts}  % useful draft-only packages (lorem ipsum, todos)
+\addcfg{engine-auto} % auto-select engine config
+
+% remove all chapter/section/etc. numbering (can be nice)
+%\setcounter{secnumdepth}{0}
+
+% clickable TOC(s) in PDFs, hyperlinks, more
+% Note: hyperref must be loaded AFTER most other packages! This especially goes
+%       for float -- see my wiki entry on LaTeX for details
+% Note: must be disabled for beamer
+\usepackage[hidelinks]{hyperref}

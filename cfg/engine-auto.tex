@@ -1,0 +1,14 @@
+%
+% Load an engine-specific config depending on the TeX engine used.
+%
+
+\usepackage{iftex}
+\ifPDFTeX
+    \addcfg{engine-pdftex}
+\fi
+\ifXeTeX
+    \addcfg{engine-xetex}
+\fi
+\ifLuaTeX
+    \addcfg{engine-luatex}
+\fi

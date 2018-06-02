@@ -1,26 +1,24 @@
 %% Preamble setup {{{
 % setup macros for \input-ing libs & source files
-\newcommand{\addmylib}[1]{\input{lib/#1}}
+\newcommand{\addcfg}[1]{\input{cfg/#1}}
 \newcommand{\addsrc}[1]{\input{src/#1}}
 
-\addmylib{preamble}
+\addcfg{preamble}
 %% }}}
-
-\begin{document}
 
 %% Document & author info {{{
 \title{Example \LaTeX\ project}
 \author{raehik}
-
-% \today's format follows: '{month} {day}, {year}'
 \date{\today}
 %% }}}
 
-% Title page
+\begin{document}
+
+%% Title page, TOC {{{
+% Title page (via document info)
 \maketitle
 
-%% Table of contents {{{
-% Enclose in \clearpage so it has its own page
+% TOC (enclosed in \clearpage to guarantee separate page)
 \clearpage
 \tableofcontents
 \clearpage
@@ -28,8 +26,8 @@
 
 \addsrc{introduction}
 \addsrc{package-examples}
-\ifxetex
-\addsrc{xelatex-example}
-\fi
+%\ifXeTeX
+%\addsrc{xelatex-example}
+%\fi
 
 \end{document}
