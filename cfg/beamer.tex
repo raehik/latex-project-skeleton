@@ -9,3 +9,15 @@
 
 % disable bottom nav bar
 %\setbeamertemplate{navigation symbols}{}
+
+% plain intro frame for every section
+\AtBeginSection{
+    \begin{frame}[plain]
+        \begin{center}
+            {\huge \insertsection}
+        \end{center}
+    \end{frame}
+}
+
+% make blocks look smarter (rounded, drop shadows)
+\setbeamertemplate{blocks}[rounded][shadow=true]

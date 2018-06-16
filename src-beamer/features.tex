@@ -1,0 +1,45 @@
+\section{Beamer features}
+
+\begin{frame}{Features: \cmdverb{pause}}
+    \begin{itemize}
+        \item solution for incremental slide uncovering (a.k.a. transitions)
+        \pause
+        \item write something, place \cmdverb{pause}, and the slide ends...
+        \pause
+        \item ...then the next slide will continue with everything before \&
+            after the \cmdverb{pause}!
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Features: Block environments}
+    \begin{block}{Block title}
+        \cmdverb{begin\{block\}}.
+        Generic block.
+    \end{block}
+    \pause
+    \begin{alertblock}{Alert block title}
+        \cmdverb{begin\{alertblock\}}.
+        Generic block, but the title is highlighted and \cmdverb{emph}-ed.
+    \end{alertblock}
+    \pause
+    \begin{theorem}
+        \cmdverb{begin\{theorem\}}.
+        Auto-italic. There is no largest prime number.
+    \end{theorem}
+    \pause
+    \begin{definition}
+        \cmdverb{begin\{definition\}}.
+        A \alert{prime number} is a number that has exactly two divisors.
+    \end{definition}
+\end{frame}
+
+\begin{frame}{Features: Block environments}
+    \begin{example}
+        \cmdverb{begin\{example\}}.
+        \begin{itemize}
+            \item 2 is prime
+            \item 3 is prime
+            \item 4 is not prime (\alert{three} divisors)
+        \end{itemize}
+    \end{example}
+\end{frame}

@@ -1,9 +1,12 @@
 %% Preamble setup {{{
 % setup macros for \input-ing libs & source files
 \newcommand{\addcfg}[1]{\input{cfg/#1}}
-\newcommand{\addsrc}[1]{\input{src-beamer/#1}}
+%\newcommand{\addsrc}[1]{\input{src/#1}}
+\newcommand{\addsrc}[1]{\input{src-beamer/#1}} % TODO: rename the src folder
 
-\documentclass{beamer}
+%\addcfg{preamble}
+%\addcfg{beamer}
+\documentclass{beamer} % TODO: remove stuff below and just change the preamble
 \addcfg{type}
 \addcfg{code}
 \addcfg{images}
@@ -16,13 +19,15 @@
 \title{Example \LaTeX\ beamer presentation}
 \author{raehik}
 \date{\today}
+\institute{Institute (optional)}
 %% }}}
 
 \begin{document}
 
 \addsrc{intro}
+\addsrc{features}
 \ifXeTeX
-    \addsrc{jp}
+    \addsrc{xetex-jp}
 \fi
 
 \end{document}
