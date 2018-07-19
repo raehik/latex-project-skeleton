@@ -1,36 +1,51 @@
-LaTeX project structure
-=======================
+LaTeX project skeleton
+======================
 
-Generic spooky skelly for simple to semi-complex LaTeX projects.
+A flexible spooky skelly for your LaTeX projects, intended for any size of
+project.
 
-To make TeX output to a different directory to your current working directory,
-pass the option `-output-directory <dir>` to the engine. Or use my `tex-render`
-script from [raehik/scripts](https://github.com/raehik/scripts/).
+I am the type of person who likes to start with some structure I know I can
+trust. I've written this skeleton by stripping down old LaTeX projects of mine.
 
 
 Features
 --------
 
-  * Nicely modular lib system
-  * Tons and tons of comments
-  * Good support for CJK, including basic support for XeLaTeX
-  * i dun used it some
-
-
-Structure
----------
-
-  * `main.tex`: main file defining preamble, title, TOC etc., then
-                includes other source files from `src/`
-  * `src/`: TeX files i.e. chapters/sections
-  * `lib/`: TeX macros & other stuff
-  * `img/`: images & diagrams
-  * `build/`: (temporary) build files created/used by LaTeX
-  * `bin/`: resulting PDF(s)
+  * Modular: unwanted configuration can be disabled
+  * Very simple: library = directory of TeX files that are `\input`
+  * Every choice is commented, I don't blindly make typography choices
+  * Engine-specific configs for pdfTeX, XeTeX, LuaTeX
+  * (working on) CJK support
 
 
 Usage
 -----
 
-Copy/clone the repo and get to work. You'll want to delete the example source
-files, and probably the library files you definitely won't use too.
+  1. Clone this repo.
+  2. Choose what template you want. As of 2018-07-19, there is a beamer template
+     and a LaTeX article template.
+  3. Set up `main.tex`.
+  4. For TeX to use `bin` and `build`, use my `tex-render` script
+     (raehik/scripts).
+
+
+Structure
+---------
+
+  * `main.tex`: main file that defines macros, includes preamble, and does title
+    & TOC (by default), from which you include other source files
+  * `cfg/`: config modules
+  * `src/`: project TeX source
+  * `img/`: images & diagrams
+  * `build/`: build files created/used by LaTeX
+  * `bin/`: output (PDFs)
+
+There are extra files and folders in this skeleton due to it holding templates
+for different types of project (that all share some configuration).
+
+
+License
+-------
+
+This project and all source files are available under the MIT license. Please
+see `LICENSE` for the full text.

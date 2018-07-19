@@ -1,0 +1,19 @@
+%
+% Top-level LaTeX Beamer config.
+%
+% Supports pdfTeX, XeTeX and LuaTeX engines.
+%
+% Intended to be used by projects to enable specific configs, while keeping the
+% main file clear of preamble.
+%
+
+\documentclass{beamer}
+
+\addcfg{type}    % typography: fonts, spacing etc.
+\addcfg{code}    % listings, syntax highlighting
+\addcfg{images}  % images
+\addcfg{drafts}  % useful draft-only packages (lorem ipsum, todos)
+\addcfg{engine-auto} % auto-select engine config
+\addcfg{beamer}  % beamer stuff
+
+% beamer loads some packages for us, like hyperref
