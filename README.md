@@ -18,6 +18,15 @@ Features
   * (working on) CJK support
 
 
+Installation
+------------
+
+I use TeXLive from the Arch Linux repos.
+
+  * `texlive-langjapanese` is required for most Japanese-specific typesetting
+    (e.g. `luatexja`).
+
+
 Usage
 -----
 
